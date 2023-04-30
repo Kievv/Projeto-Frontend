@@ -8,10 +8,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />} />
-        <Route path="/" element={<Home />} />
+        <Route element={<Layout></Layout>}>
+          <Route path="/home" element={<Home />} />
+        </Route>
+
+        <Route path="*" element={<Erro404 />} />
       </Routes>
-      <Route path="*" element={<Erro404 />} />
     </BrowserRouter>
   );
 }
