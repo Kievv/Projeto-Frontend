@@ -14,7 +14,7 @@ const Navbar = (props) => {
           {props.itens.map((item) => (
             <li key={item}>
               <NavLink to={'/' + item} className="links">
-                {item}
+                {item.toUpperCase()}
               </NavLink>
             </li>
           ))}
