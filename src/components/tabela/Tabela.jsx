@@ -5,11 +5,11 @@ function Tabela(props) {
   return (
     <table>
       <thead>
-        <td>
-          <th>{props.hospital}</th>
-          <th>{props.medico}</th>
-          <th className="last-column">{props.horario}</th>
-        </td>
+        <tr>
+          <td>{props.hospital}</td>
+          <td>{props.medico}</td>
+          <td className="last-column">{props.horario}</td>
+        </tr>
       </thead>
     </table>
   );
