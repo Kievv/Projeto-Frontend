@@ -9,7 +9,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <footer>
-        <p>Ainda n tem</p>
+        <p>Copyright 2023.</p>
       </footer>
     </>
   );
