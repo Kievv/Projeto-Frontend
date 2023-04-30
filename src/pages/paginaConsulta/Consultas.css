@@ -1,0 +1,30 @@
+.layout-consultas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.btn-holder{
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+button{
+    margin: 20px;
+    width: 188px;
+    
+}
+
+.cadastrar {
+    background-color: #FFA300;
+    color: black;
+    font-weight: bold;
+}
+
+.deletar {
+    background-color: #99C24D;
+    color: black;
+    font-weight: bold;
+}
