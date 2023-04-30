@@ -6,7 +6,7 @@ const Navbar = (props) => {
   return (
     <div className="container">
       <nav className="nav">
-        <a href="#" className="logo">
+        <a href="/home" className="logo">
           <img src={companyLogo} alt="Remedie logo" className="image-Logo"></img>
         </a>
 
