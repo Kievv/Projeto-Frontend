@@ -1,13 +1,13 @@
 import Tabela from "../../components/tabela/Tabela";
 
-const Consulta = () => {
+const Consultas = () => {
     return (
         <>
             <h1>Suas consultas do dia</h1>
-            <Tabela/>
+            <Tabela />
         </>       
     )
   };
   
-  export default Consulta;
+  export default Consultas;
   

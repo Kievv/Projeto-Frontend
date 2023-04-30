@@ -1,6 +1,6 @@
 import Navbar from '../Navbar';
 
-const menu = ['HOME', 'REMÉDIOS', 'CONSULTAS', 'EXAMES'];
+const menu = ['home', 'remedios', 'consultas', 'exames'];
 
 const Header = () => {
   return (

@@ -1,36 +1,21 @@
 import React from 'react';
 import "./Tabela.css"
 
-function Tabela() {
+function Tabela(props) {
   return (
     <table>
       <thead>
         <tr>
-          <th>HOSPITAL</th>
+          <th>{props.}</th>
           <th>MÉDICO</th>
-          <th class="last-column">HORÁRIO</th>
+          <th className="last-column">HORÁRIO</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>HOSPITAL</td>
-          <td>MÉDICO</td>
-          <td class="last-column">HORÁRIO</td>
-        </tr>
-        <tr>
-          <td>HOSPITAL</td>
-          <td>MÉDICO</td>
-          <td class="last-column">HORÁRIO</td>
-        </tr>
-        <tr>
-          <td>HOSPITAL</td>
-          <td>MÉDICO</td>
-          <td class="last-column">HORÁRIO</td>
-        </tr>
-        <tr>
-          <td>HOSPITAL</td>
-          <td>MÉDICO</td>
-          <td class="last-column">HORÁRIO</td>
+          <td>exemplo</td>
+          <td>exemplo</td>
+          <td className="last-column">exemplo</td>
         </tr>
       </tbody>
     </table>
