@@ -20,14 +20,20 @@
     align-items: center;
     justify-content: center;
 }
+
+ul li:hover{
+    background-color: rgba(255, 163, 0, 0.5);
+    transition: 500ms;
+    
+}
 .image-Logo {
-    height: 50%;
+    width: 50%;
     
 }
 
 .active {
     background-color: #FFA300;
-    color: #007C7D;
+    color: #007C7D !important;
 }
 
 .container .nav ul {
