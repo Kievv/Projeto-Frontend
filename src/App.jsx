@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Erro404 from './pages/Erro404';
 import Consultas from './pages/paginaConsulta/Consultas';
 import Remedios from './pages/Remedio/Remedios';
+import ConsultasDeletar from './pages/paginaConsulta/ConsultasDeletar';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/remedios" element={<Remedios />} />
           <Route path="/consultas" element={<Consultas />} />
+          <Route path="/consultas/deletar" element={<ConsultasDeletar />} />
         </Route>
         <Route path="*" element={<Erro404 />} />
       </Routes>

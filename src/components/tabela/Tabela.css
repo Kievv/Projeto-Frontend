@@ -53,7 +53,9 @@ table {
     border-right: none; /* remove a borda direita da última coluna */
   }
 
-  
+  .checkbox {
+    background-color: white;
+  }
 
 
   
