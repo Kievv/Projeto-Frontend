@@ -6,9 +6,9 @@ const Navbar = (props) => {
   return (
     <div className="container">
       <nav className="nav">
-        <NavLink href="#" className="logo">
+        <a href="#" className="logo">
           <img src={companyLogo} alt="Remedie logo" className="image-Logo"></img>
-        </NavLink>
+        </a>
 
         <ul>
           {props.itens.map((item) => (
