@@ -1,4 +1,4 @@
-import Navbar from './Navbar';
+import Navbar from '../Navbar';
 
 const menu = ['HOME', 'REMÉDIOS', 'CONSULTAS', 'EXAMES'];
 
