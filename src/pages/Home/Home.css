@@ -1,0 +1,43 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFA300;
+    height: 100%;
+}
+
+.content-holder{
+    color: black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 3% 15%;
+}
+.content h1{
+    color: #007C7D;
+    font-size: 6em;
+}
+
+#texto-home{
+    margin: 50px;
+    font-size: 2em;
+
+}
+.imagem-home{
+
+    width: 30%;   
+}
+
+.btn-holder{
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.botaoHome {
+    background-color: #007C7D;
+    margin: 20px;
+    width: 188px;
+    color: black;
+    font-weight: bold;    
+}
