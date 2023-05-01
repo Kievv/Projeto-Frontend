@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
-
-import remedios from '../../assets/pexels-karolina-grabowska-4210607.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -14,7 +12,7 @@ const Home = () => {
             Este site foi criado com o intuito de ser uma agenda de remédios diária, consultas médicas e exames para que
             você nunca mais esqueça nenhuma data.
           </h3>
-          <img src={remedios} alt="remedios" className="imagem-home" />
+          <div alt="remedios" className="imagem-home"></div>
         </div>
 
         <div className="btn-holder">

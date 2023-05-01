@@ -38,3 +38,15 @@ button{
 h3 {
     color: black;
 }
+
+.imagem-consultas{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url('../../assets/pexels-karolina-grabowska-4021775.jpg');
+    background-attachment: scroll;
+    filter: blur(6px);
+    z-index: -1;
+}

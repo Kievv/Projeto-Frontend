@@ -1,5 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../Header';
+import Footer from '../Footer';
+import './Layout.css';
 
 const Layout = () => {
   return (
@@ -11,7 +13,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <footer>
-        <p>Copyright 2023.</p>
+        <Footer />
       </footer>
     </>
   );

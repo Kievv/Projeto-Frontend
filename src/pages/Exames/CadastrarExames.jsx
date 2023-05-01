@@ -1,28 +1,28 @@
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
-import './Remedio.css';
-import FormsRemedio from '../../components/FormsRemedio';
+import './Exames.css';
+import FormsExames from '../../components/FormsExames';
 
-const CadastrarRemedio = () => {
+const CadastrarExames = () => {
   return (
     <>
       <div className="layout-remedios">
-        <h1>Cadastre seus remédios no mural</h1>
+        <h1>Cadastre seus exames no mural</h1>
         <h3>Basta preencher os campos e clicar em "Cadastrar"</h3>
-        <FormsRemedio />
+        <FormsExames />
 
         <div className="btn-holder">
-          <Link to="/remedios">
+          <Link to="/exames">
             <Button botao="VOLTAR" classe="voltar" />
           </Link>
-          <Link to="/remedios/deletar">
+          <Link to="/exames/deletar">
             <Button botao="DELETAR" classe="deletar" />
           </Link>
         </div>
-        <div className="imagem-remedios"></div>
+        <div className="imagem-exames"></div>
       </div>
     </>
   );
 };
 
-export default CadastrarRemedio;
+export default CadastrarExames;

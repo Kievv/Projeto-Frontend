@@ -27,6 +27,7 @@ const DeletarRemedio = () => {
             <Button botao="DELETAR" classe="deletar" />
           </Link>
         </div>
+        <div className="imagem-remedios"></div>
       </div>
     </>
   );

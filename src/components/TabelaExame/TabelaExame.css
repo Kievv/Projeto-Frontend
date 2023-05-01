@@ -1,0 +1,58 @@
+/* Estilo geral da tabela */
+table {
+    border-collapse: collapse; /* Colapsar as bordas da tabela */
+    width: 100%; /* Largura total da tabela */
+    max-width: 800px; /* Largura máxima da tabela */
+    margin: 0 auto; /* Centralizar a tabela horizontalmente */
+    color: black;
+    font-weight: bold;
+    margin-top: 80px;
+    
+    
+  }
+  
+  /* Estilo do cabeçalho da tabela */
+  thead {
+    background-color: #f2f2f2; /* Cor de fundo do cabeçalho */
+    font-weight: bold; /* Peso da fonte do cabeçalho */
+  }
+  
+  /* Estilo das células de cabeçalho da tabela */
+  th {
+    padding: 10px; /* Espaçamento interno das células de cabeçalho */
+    text-align: center; /* Alinhamento do texto das células de cabeçalho */
+    border-bottom: 2px solid #000000; /* Borda inferior das células de cabeçalho */
+    border-right: 2px solid #000000;
+  }
+  
+  /* Estilo das células de dados da tabela */
+  td {
+    padding: 10px; /* Espaçamento interno das células de dados */
+    text-align: center; /* Alinhamento do texto das células de dados */
+    border-bottom: 2px solid #000000; /* Borda inferior das células de dados */
+    border-right: 2px solid #000000;
+  }
+  
+  /* Estilo das células de dados de uma linha ímpar da tabela */
+  tr td {
+    background-color: #ffffff; /* Cor de fundo das células de dados  */
+  }
+
+  h1 {
+    color: black;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .tabela-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .last-column {
+    border-right: none; /* remove a borda direita da última coluna */
+  }
+
+
+
+  

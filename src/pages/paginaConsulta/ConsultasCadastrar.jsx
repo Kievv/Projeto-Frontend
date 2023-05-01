@@ -19,6 +19,7 @@ const CadastrarRemedio = () => {
             <Button botao="DELETAR" classe="deletar" />
           </Link>
         </div>
+        <div className="imagem-consultas"></div>
       </div>
     </>
   );

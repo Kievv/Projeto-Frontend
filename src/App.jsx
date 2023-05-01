@@ -9,6 +9,9 @@ import ConsultasDeletar from './pages/paginaConsulta/ConsultasDeletar';
 import DeletarRemedio from './pages/Remedio/DeletarRemedio';
 import CadastrarRemedio from './pages/Remedio/CadastrarRemedio';
 import ConsultasCadastrar from './pages/paginaConsulta/ConsultasCadastrar';
+import Exames from './pages/Exames/Exames';
+import DeletarExames from './pages/Exames/DeletarExames';
+import CadastrarExames from './pages/Exames/CadastrarExames';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
           <Route path="/consultas" element={<Consultas />} />
           <Route path="/consultas/deletar" element={<ConsultasDeletar />} />
           <Route path="/consultas/cadastrar" element={<ConsultasCadastrar />} />
+          <Route path="/exames" element={<Exames />} />
+          <Route path="/exames/deletar" element={<DeletarExames />} />
+          <Route path="/exames/cadastrar" element={<CadastrarExames />} />
         </Route>
         <Route path="*" element={<Erro404 />} />
       </Routes>
