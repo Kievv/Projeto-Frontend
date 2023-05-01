@@ -2,23 +2,19 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import TabelaRemedio from '../../components/TabelaRemedio';
 import './Remedio.css';
+import Forms from '../../components/Forms';
 
-const Remedios = () => {
+const CadastrarRemedio = () => {
   return (
     <>
       <div className="layout-remedios">
-        <h1>Seus Remédios do dia</h1>
-        <TabelaRemedio
-          remedio="Diazepam"
-          dose="2 comprimidos"
-          miligramas="25mg"
-          hor1="12:00"
-          hor2="18:00"
-          hor3="00:00"
-        />
+        <h1>Cadastre seus remédios no mural</h1>
+        <h3>Basta preencher os campos e clicar em "Cadastrar"</h3>
+        <Forms />
+
         <div className="btn-holder">
-          <Link to="/remedios/cadastrar">
-            <Button botao="CADASTRAR" classe="cadastrar" />
+          <Link to="/remedios">
+            <Button botao="VOLTAR" classe="voltar" />
           </Link>
           <Link to="/remedios/deletar">
             <Button botao="DELETAR" classe="deletar" />
@@ -29,4 +25,4 @@ const Remedios = () => {
   );
 };
 
-export default Remedios;
+export default CadastrarRemedio;

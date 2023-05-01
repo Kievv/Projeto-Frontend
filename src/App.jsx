@@ -6,6 +6,8 @@ import Erro404 from './pages/Erro404';
 import Consultas from './pages/paginaConsulta/Consultas';
 import Remedios from './pages/Remedio/Remedios';
 import ConsultasDeletar from './pages/paginaConsulta/ConsultasDeletar';
+import DeletarRemedio from './pages/Remedio/DeletarRemedio';
+import CadastrarRemedio from './pages/Remedio/CadastrarRemedio';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/remedios" element={<Remedios />} />
+          <Route path="/remedios/deletar" element={<DeletarRemedio />} />
+          <Route path="/remedios/cadastrar" element={<CadastrarRemedio />} />
           <Route path="/consultas" element={<Consultas />} />
           <Route path="/consultas/deletar" element={<ConsultasDeletar />} />
         </Route>
