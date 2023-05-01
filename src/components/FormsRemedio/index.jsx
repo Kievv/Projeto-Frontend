@@ -2,7 +2,7 @@ import Button from '../Button';
 import './Forms.css';
 import TextField from './TextField';
 
-const Forms = () => {
+const FormsRemedio = () => {
   return (
     <>
       <form className="formsContainer">
@@ -34,4 +34,4 @@ const Forms = () => {
   );
 };
 
-export default Forms;
+export default FormsRemedio;

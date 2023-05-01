@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Erro404 from './pages/Erro404';
 import Consultas from './pages/paginaConsulta/Consultas';
 import Remedios from './pages/Remedio/Remedios';
