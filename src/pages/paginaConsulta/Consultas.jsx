@@ -11,7 +11,7 @@ const Consultas = () => {
         <h1>Suas consultas do dia</h1>
         <Tabela hospital="DAHER" medico="Giuseppe Camolli" horario="14:50" />
         <div className="btn-holder">
-          <Link to="/consultas">
+          <Link to="/consultas/cadastrar">
             <Button botao="CADASTRAR" classe="cadastrar" />
           </Link>
           <Link to="/consultas/deletar">

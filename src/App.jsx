@@ -8,18 +8,21 @@ import Remedios from './pages/Remedio/Remedios';
 import ConsultasDeletar from './pages/paginaConsulta/ConsultasDeletar';
 import DeletarRemedio from './pages/Remedio/DeletarRemedio';
 import CadastrarRemedio from './pages/Remedio/CadastrarRemedio';
+import ConsultasCadastrar from './pages/paginaConsulta/ConsultasCadastrar';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/remedios" element={<Remedios />} />
           <Route path="/remedios/deletar" element={<DeletarRemedio />} />
           <Route path="/remedios/cadastrar" element={<CadastrarRemedio />} />
           <Route path="/consultas" element={<Consultas />} />
           <Route path="/consultas/deletar" element={<ConsultasDeletar />} />
+          <Route path="/consultas/cadastrar" element={<ConsultasCadastrar />} />
         </Route>
         <Route path="*" element={<Erro404 />} />
       </Routes>
