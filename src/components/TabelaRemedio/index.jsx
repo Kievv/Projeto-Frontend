@@ -6,6 +6,11 @@ const TabelaRemedio = (props) => {
     <table>
       <thead>
         <tr>
+          {props.exibirCheckbox && (
+            <td>
+              <input type="checkbox" name="deletar" id="check" className="checkbox" />
+            </td>
+          )}
           <td>{props.remedio}</td>
           <td>{props.dose}</td>
           <td>{props.miligramas}</td>

@@ -1,0 +1,17 @@
+.cadastrar {
+    background-color: #FFA300;
+    color: black;
+    font-weight: bold;
+}
+
+.deletar {
+    background-color: #99C24D;
+    color: black;
+    font-weight: bold;
+}
+
+.voltar {
+    background-color: #007C7D;
+    color: black;
+    font-weight: bold;
+}
