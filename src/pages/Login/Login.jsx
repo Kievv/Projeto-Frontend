@@ -1,9 +1,11 @@
 import LoginForm from '../../components/LoginForm/LoginForm';
+import './Login.css';
 
 export default function Login() {
   return (
     <section className="login">
-      <h1>Login</h1>
+      <div className="background-image"></div>
+      <h1 className='titulo-login'>Remedie</h1>
       <LoginForm />
     </section>
   );

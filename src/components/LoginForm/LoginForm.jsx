@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
 import Button from '../Botao';
+import './LoginForm.css';
 
 export default function LoginForm(props) {
   const {
@@ -52,19 +53,25 @@ export default function LoginForm(props) {
   }
 
   return (
-    <form>
-      <div>
-        <label htmlFor="email">E-mail</label>
-        <input type="email" {...register('email', validaEmail)} />
-        {errors.email && <p className="error">{errors.email.message}</p>}
-      </div>
-      <div>
-        <label htmlFor="senha">Senha</label>
-        <input type="password" {...register('senha', validaSenha)} />
-        {errors.senha && <p className="error">{errors.senha.message}</p>}
-      </div>
-      <Button handleClick={handleSubmit(onSubmit)} classe="btn btn-primary" botao="Entrar" />
-      {errorLogin && <p className="error">{errorLogin}</p>}
-    </form>
+    <div className='div-login'>
+      <h1>Login</h1>
+      <form className='loginForm'>
+        <div>
+          <label htmlFor="email">E-mail</label>
+          <input type="email" {...register('email', validaEmail)} />
+          {errors.email && <p className="error">{errors.email.message}</p>}
+        </div>
+        <div>
+          <label htmlFor="senha">Senha</label>
+          <input type="password" {...register('senha', validaSenha)} />
+          {errors.senha && <p className="error">{errors.senha.message}</p>}
+        </div>
+        <div className='botao-login'>
+          <Button handleClick={handleSubmit(onSubmit)} classe="btn btn-primary" botao="Entrar" />
+        </div>
+        {errorLogin && <p className="error">{errorLogin}</p>}
+      </form>
+    </div>
+
   );
 }

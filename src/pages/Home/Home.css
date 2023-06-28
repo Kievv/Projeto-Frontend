@@ -8,6 +8,7 @@
 .content h1{
     color: #007C7D;
     font-size: 6em;
+    text-align: center;
 }
 
 #texto-home{
@@ -75,8 +76,7 @@
     height: auto;
     border-radius: 4px;
   }
-  
-  
+    
   h2 {
     font-size: 1.5rem;
     margin-top: 0;
