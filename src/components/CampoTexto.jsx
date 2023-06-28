@@ -1,12 +1,13 @@
-const TextField = (props) => {
+const CampoTexto = (props) => {
   return (
     <>
-      <div className="fieldHolder">
+      <div className="container">
         <label className={`campo-${props.campo}`}>
           {props.label}
           <input
-            type="text"
-            name={props.item}
+            type={props.type}
+            name={props.name}
+            {...props.register(props.name, props.validateSchema)}
             id={props.item}
             className={props.campo}
             placeholder={props.placeholder}
@@ -17,4 +18,4 @@ const TextField = (props) => {
   );
 };
 
-export default TextField;
+export default CampoTexto;

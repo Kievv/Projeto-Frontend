@@ -1,7 +1,6 @@
-import './Exames.css';
 import { Link } from 'react-router-dom';
-import Button from '../../components/Button';
-import TabelaExame from '../../components/TabelaExame';
+import Botao from '../../components/Botao';
+import TabelaExame from '../../components/exames/Tabela';
 
 const Exames = () => {
   return (
@@ -16,11 +15,11 @@ const Exames = () => {
           horario="14:20"
         />
         <div className="btn-holder">
-          <Link to="/exames/cadastrar">
-            <Button botao="CADASTRAR" classe="cadastrar" />
+          <Link href="/exames/cadastro">
+            <Botao botao="CADASTRAR" classe="cadastrar" />
           </Link>
-          <Link to="/exames/deletar">
-            <Button botao="DELETAR" classe="deletar" />
+          <Link href="/exames/delete">
+            <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>
 

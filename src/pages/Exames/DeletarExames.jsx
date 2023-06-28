@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import Button from '../../components/Button';
-import './Exames.css';
-import TabelaExame from '../../components/TabelaExame';
+import Botao from '../../components/Botao';
+import TabelaExame from '../../components/exames/Tabela';
 
 const DeletarExame = () => {
   return (
@@ -19,11 +18,11 @@ const DeletarExame = () => {
         />
 
         <div className="btn-holder">
-          <Link to="/exames">
-            <Button botao="VOLTAR" classe="voltar" />
+          <Link href="/exames">
+            <Botao botao="VOLTAR" classe="voltar" />
           </Link>
-          <Link to="/exames/deletar">
-            <Button botao="DELETAR" classe="deletar" />
+          <Link href="/exames/delete">
+            <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>
         <div className="imagem-exames"></div>

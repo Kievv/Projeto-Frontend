@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../../components/Button';
-import Tabela from '../../components/tabela/Tabela';
-import './Consultas.css';
+import Botao from '../../components/Botao';
+import Tabela from '../../components/consultas/Tabela';
 
 const Consultas = () => {
   return (
@@ -11,11 +9,11 @@ const Consultas = () => {
         <h1>Suas consultas do dia</h1>
         <Tabela hospital="DAHER" medico="Giuseppe Camolli" horario="14:50" />
         <div className="btn-holder">
-          <Link to="/consultas/cadastrar">
-            <Button botao="CADASTRAR" classe="cadastrar" />
+          <Link href="/consultas/cadastro">
+            <Botao botao="CADASTRAR" classe="cadastro" />
           </Link>
-          <Link to="/consultas/deletar">
-            <Button botao="DELETAR" classe="deletar" />
+          <Link href="/consultas/delete">
+            <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>
         <div className="imagem-consultas"></div>

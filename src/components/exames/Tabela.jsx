@@ -1,5 +1,3 @@
-import './TabelaExame.css';
-
 const TabelaExame = (props) => {
   return (
     <table>

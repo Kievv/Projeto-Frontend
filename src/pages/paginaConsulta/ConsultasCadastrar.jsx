@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import Button from '../../components/Button';
-import '../Remedio/Remedio.css';
-import FormsConsulta from '../../components/FormsConsultas/ConsultasForm';
+import Botao from '../../components/Botao';
+import FormsConsulta from '../../components/consultas/Formulario';
 
 const CadastrarRemedio = () => {
   return (
@@ -12,11 +11,11 @@ const CadastrarRemedio = () => {
         <FormsConsulta />
 
         <div className="btn-holder">
-          <Link to="/consultas">
-            <Button botao="VOLTAR" classe="voltar" />
+          <Link href="/consultas">
+            <Botao botao="VOLTAR" classe="voltar" />
           </Link>
-          <Link to="/remedios/deletar">
-            <Button botao="DELETAR" classe="deletar" />
+          <Link href="/remedios/delete">
+            <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>
         <div className="imagem-consultas"></div>

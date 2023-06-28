@@ -3,6 +3,7 @@ import Button from '../../components/Button';
 import './Home.css';
 
 const Home = () => {
+  const handleLogout = useContext(UserContext);
   return (
     <>
       <div className="content">
@@ -13,17 +14,18 @@ const Home = () => {
             você nunca mais esqueça nenhuma data.
           </h3>
           <div alt="remedios" className="imagem-home"></div>
+          <Button handleClick={handleLogout} classe="btn btn-primary" botao="SAIR" />
         </div>
 
         <div className="btn-holder">
           <Link to="/remedios">
-            <Button botao="REMEDIOS" classe="botaoHome" />
+            <Botao botao="REMEDIOS" classe="botaoHome" />
           </Link>
           <Link to="/consultas">
-            <Button botao="CONSULTAS" classe="botaoHome" />
+            <Botao botao="CONSULTAS" classe="botaoHome" />
           </Link>
           <Link to="/exames">
-            <Button botao="EXAMES" classe="botaoHome" />
+            <Botao botao="EXAMES" classe="botaoHome" />
           </Link>
         </div>
       </div>

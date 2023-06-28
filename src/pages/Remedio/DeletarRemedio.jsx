@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import Button from '../../components/Button';
-import TabelaRemedio from '../../components/TabelaRemedio';
-import './Remedio.css';
+import TabelaRemedio from '../../components/remedios/Tabela';
+
+import Botao from '../../components/Botao';
 
 const DeletarRemedio = () => {
   return (
@@ -20,11 +20,11 @@ const DeletarRemedio = () => {
         />
 
         <div className="btn-holder">
-          <Link to="/remedios">
-            <Button botao="VOLTAR" classe="voltar" />
+          <Link href={'/remedios'}>
+            <Botao botao="VOLTAR" classe="voltar" />
           </Link>
-          <Link to="/remedios/deletar">
-            <Button botao="DELETAR" classe="deletar" />
+          <Link href={'/remedios/delete'}>
+            <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>
         <div className="imagem-remedios"></div>

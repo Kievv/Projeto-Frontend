@@ -1,6 +1,3 @@
-import React from 'react';
-import './Tabela.css';
-
 function Tabela(props) {
   return (
     <table>

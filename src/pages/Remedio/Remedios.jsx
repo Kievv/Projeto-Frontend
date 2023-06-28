@@ -1,27 +1,23 @@
+import Botao from '../../components/Botao';
 import { Link } from 'react-router-dom';
-import Button from '../../components/Button';
-import TabelaRemedio from '../../components/TabelaRemedio';
-import './Remedio.css';
+import TabelaRemedio from '../../components/remedios/Tabela';
+import UserContext from '../../context/UserContext';
+import { useContext } from 'react';
 
 const Remedios = () => {
+  const userId = useContext(UserContext);
+  console.log(userId, 'userId');
   return (
     <>
       <div className="layout-remedios">
         <h1>Seus Remédios do dia</h1>
-        <TabelaRemedio
-          remedio="Diazepam"
-          dose="2 comprimidos"
-          miligramas="25mg"
-          hor1="12:00"
-          hor2="18:00"
-          hor3="00:00"
-        />
+        <TabelaRemedio userId={userId} />
         <div className="btn-holder">
-          <Link to="/remedios/cadastrar">
-            <Button botao="CADASTRAR" classe="cadastrar" />
+          <Link href="/remedios/cadastro">
+            <Botao botao="CADASTRAR" classe="cadastro" />
           </Link>
-          <Link to="/remedios/deletar">
-            <Button botao="DELETAR" classe="deletar" />
+          <Link href="/remedios/delete">
+            <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>
         <div className="imagem-remedios"></div>
