@@ -1,11 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { addRemedio } from '../../services/RemediosService';
-
-import Botao from '../components/Botao';
-import CampoTexto from '../components/CampoTexto';
+import CampoTexto from '../CampoTexto';
 import { useContext } from 'react';
 import UserContext from '../../contexts/UserContext';
+import Botao from '../Botao';
 
 const Formulario = () => {
   const navigate = useNavigate();

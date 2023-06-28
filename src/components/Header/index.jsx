@@ -1,9 +1,7 @@
-import Navbar from '../Navbar';
-
-const menu = ['home', 'remedios', 'consultas', 'exames'];
+import Navbar from '../navbar/Navbar';
 
 const Header = () => {
-  return <Navbar itens={menu} />;
+  return <Navbar />;
 };
 
 export default Header;

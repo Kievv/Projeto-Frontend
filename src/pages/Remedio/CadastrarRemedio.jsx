@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Formulario from '../../components/remedios/Formula';
+import Formulario from '../../components/remedios/Formulario';
 import Botao from '../../components/Botao';
 
 const CadastrarRemedio = () => {
@@ -11,10 +11,10 @@ const CadastrarRemedio = () => {
         <Formulario />
 
         <div className="btn-holder">
-          <Link href="/remedios">
+          <Link to="/remedios">
             <Botao botao="VOLTAR" classe="voltar" />
           </Link>
-          <Link href="/remedios/delete">
+          <Link to="/remedios/delete">
             <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>

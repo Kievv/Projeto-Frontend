@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Botao from '../../components/Botao';
 import CampoTexto from '../../components/CampoTexto';
 
-const dbInstance = collection(database, 'consultas');
+// const dbInstance = collection(database, 'consultas');
 
 const Formulario = () => {
   const [local, setLocal] = useState('');

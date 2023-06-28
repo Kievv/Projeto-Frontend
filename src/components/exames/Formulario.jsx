@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Botao from '../../components/Botao';
 import CampoTexto from '../../components/CampoTexto';
 
-const dbInstance = collection(database, 'exames');
+// const dbInstance = collection(database, 'exames');
 
 const Formulario = () => {
   const [exame, setExame] = useState('');

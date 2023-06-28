@@ -22,13 +22,13 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/remedios" element={<Remedios />} />
           <Route path="/remedios/deletar" element={<DeletarRemedio />} />
-          <Route path="/remedios/cadastrar" element={<CadastrarRemedio />} />
+          <Route path="/remedios/cadastro" element={<CadastrarRemedio />} />
           <Route path="/consultas" element={<Consultas />} />
           <Route path="/consultas/deletar" element={<ConsultasDeletar />} />
-          <Route path="/consultas/cadastrar" element={<ConsultasCadastrar />} />
+          <Route path="/consultas/cadastro" element={<ConsultasCadastrar />} />
           <Route path="/exames" element={<Exames />} />
           <Route path="/exames/deletar" element={<DeletarExames />} />
-          <Route path="/exames/cadastrar" element={<CadastrarExames />} />
+          <Route path="/exames/cadastro" element={<CadastrarExames />} />
         </Route>
         <Route path="*" element={<Erro404 />} />
       </Routes>

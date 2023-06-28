@@ -1,4 +1,4 @@
-const Button = (props) => {
+const Botao = (props) => {
   return (
     <>
       <button onClick={props.handleClick} type={props.type} className={`${props.classe}`}>
@@ -8,4 +8,4 @@ const Button = (props) => {
   );
 };
 
-export default Button;
+export default Botao;

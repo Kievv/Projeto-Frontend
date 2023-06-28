@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import Button from '../../components/Button';
+import { useContext } from 'react';
+import Botao from '../../components/Botao';
+import UserContext from '../../contexts/UserContext';
 import './Home.css';
 
 const Home = () => {
@@ -14,7 +16,7 @@ const Home = () => {
             você nunca mais esqueça nenhuma data.
           </h3>
           <div alt="remedios" className="imagem-home"></div>
-          <Button handleClick={handleLogout} classe="btn btn-primary" botao="SAIR" />
+          <Botao handleClick={handleLogout} classe="btn btn-primary" botao="SAIR" />
         </div>
 
         <div className="btn-holder">
