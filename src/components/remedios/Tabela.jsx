@@ -1,23 +1,23 @@
 import { useEffect, useState, useContext } from 'react';
 import RemediosContext from '../../contexts/RemediosContext';
+import { set } from 'react-hook-form';
 
 const TabelaRemedio = (props) => {
   const { remedios, listRemedios } = useContext(RemediosContext);
   const [loading, setLoading] = useState(false);
   const [medicamento, setMedicamento] = useState([]);
 
-  // problemas para renderizar na primeira vez que o componente é carregado
   useEffect(() => {
     async function carrega() {
       setLoading(true);
-      const medica = await listRemedios();
-      console.log(...medica);
-      setMedicamento(...medica);
-      setLoading(false);
+      await listRemedios().then((data) => {
+        setMedicamento(data);
+        setLoading(false);
+      });
     }
 
     carrega();
-  }, [medicamento]);
+  }, []);
 
   return (
     <>
@@ -25,7 +25,7 @@ const TabelaRemedio = (props) => {
         <h3>Aguarde</h3>
       ) : (
         <ul>
-          {remedios.map((remedio, key) => {
+          {medicamento.map((remedio, key) => {
             return (
               <li key={key}>
                 <p>
