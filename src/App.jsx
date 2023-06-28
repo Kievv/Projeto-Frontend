@@ -12,6 +12,7 @@ import ConsultasCadastrar from './pages/paginaConsulta/ConsultasCadastrar';
 import Exames from './pages/Exames/Exames';
 import DeletarExames from './pages/Exames/DeletarExames';
 import CadastrarExames from './pages/Exames/CadastrarExames';
+import Login from './pages/Login/Login';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/remedios" element={<Remedios />} />
           <Route path="/remedios/deletar" element={<DeletarRemedio />} />

@@ -16,7 +16,7 @@ const Home = () => {
             você nunca mais esqueça nenhuma data.
           </h3>
           <div alt="remedios" className="imagem-home"></div>
-          <Botao handleClick={handleLogout} classe="btn btn-primary" botao="SAIR" />
+          {/* <Botao handleClick={handleLogout} classe="btn btn-primary" botao="SAIR" /> */}
         </div>
 
         <div className="btn-holder">

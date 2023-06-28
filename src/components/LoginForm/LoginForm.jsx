@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
-import Button from '../../components/Botao';
+import Button from '../Botao';
 
 export default function LoginForm(props) {
   const {
