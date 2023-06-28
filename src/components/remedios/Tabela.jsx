@@ -4,17 +4,20 @@ import RemediosContext from '../../contexts/RemediosContext';
 const TabelaRemedio = (props) => {
   const { remedios, listRemedios } = useContext(RemediosContext);
   const [loading, setLoading] = useState(false);
+  const [medicamento, setMedicamento] = useState([]);
 
   // problemas para renderizar na primeira vez que o componente é carregado
   useEffect(() => {
     async function carrega() {
       setLoading(true);
-      await listRemedios();
+      const medica = await listRemedios();
+      console.log(...medica);
+      setMedicamento(...medica);
       setLoading(false);
     }
 
     carrega();
-  }, []);
+  }, [medicamento]);
 
   return (
     <>

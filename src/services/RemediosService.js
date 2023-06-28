@@ -5,7 +5,7 @@ export async function listRemedios() {
   let remedios = [];
 
   const remediosRef = collection(db, 'remedios');
-  const q = query(remediosRef, where('userId', '==', userId), limit(30));
+  const q = query(remediosRef, limit(30));
 
   getDocs(q)
     .then((querySnapshot) => {

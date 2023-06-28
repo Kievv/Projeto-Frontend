@@ -24,7 +24,7 @@ export function RemediosContextProvider(props) {
       const data = await listRemedios();
 
       setMeusRemedios(data);
-      console.log(data, 'Data');
+      return data;
     } catch (err) {
       throw Error(err.message);
     }
