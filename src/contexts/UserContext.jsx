@@ -12,12 +12,11 @@ export function UserContextProvider(props) {
   const [currentUser, setCurrentUser] = useState({ userId: null, logado: false });
 
   async function handleLogin(email, password) {
-    try {
-      const id = await login(email, password);
-      setCurrentUser({ userId: id, logado: true });
-    } catch (err) {
-      throw Error(err.message);
-    }
+    await login(email, password)
+      .then((id) => setCurrentUser({ userId: id, logado: true }))
+      .catch((error) => {
+        throw Error(error.message);
+      });
   }
 
   async function handleLogout() {

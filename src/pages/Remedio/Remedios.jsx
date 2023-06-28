@@ -5,8 +5,7 @@ import UserContext from '../../contexts/UserContext';
 import { useContext } from 'react';
 
 const Remedios = () => {
-  const userId = useContext(UserContext);
-  console.log(userId, 'userId');
+  const { userId } = useContext(UserContext);
   return (
     <>
       <div className="layout-remedios">

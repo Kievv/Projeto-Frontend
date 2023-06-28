@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
-import Button from '../../components/Botao';
+import Button from '../Botao';
 
 export default function LoginForm(props) {
   const {
@@ -13,7 +13,7 @@ export default function LoginForm(props) {
 
   const navigate = useNavigate();
 
-  const { handleLogin, logado } = useContext(UserContext);
+  const { handleLogin } = useContext(UserContext);
   const [errorLogin, setErrorLogin] = useState('');
 
   const validaEmail = {
@@ -44,9 +44,7 @@ export default function LoginForm(props) {
 
     await handleLogin(email, senha)
       .then(() => {
-        if (logado) {
-          navigate('/');
-        }
+        navigate('/');
       })
       .catch((err) => {
         setErrorLogin(err.message);

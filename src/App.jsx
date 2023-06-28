@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import UserContext from './contexts/UserContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
@@ -12,24 +14,30 @@ import ConsultasCadastrar from './pages/paginaConsulta/ConsultasCadastrar';
 import Exames from './pages/Exames/Exames';
 import DeletarExames from './pages/Exames/DeletarExames';
 import CadastrarExames from './pages/Exames/CadastrarExames';
+import Login from './pages/Login/Login';
 
 function App() {
+  const { logado } = useContext(UserContext);
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/remedios" element={<Remedios />} />
-          <Route path="/remedios/deletar" element={<DeletarRemedio />} />
-          <Route path="/remedios/cadastro" element={<CadastrarRemedio />} />
-          <Route path="/consultas" element={<Consultas />} />
-          <Route path="/consultas/deletar" element={<ConsultasDeletar />} />
-          <Route path="/consultas/cadastro" element={<ConsultasCadastrar />} />
-          <Route path="/exames" element={<Exames />} />
-          <Route path="/exames/deletar" element={<DeletarExames />} />
-          <Route path="/exames/cadastro" element={<CadastrarExames />} />
-        </Route>
+        {logado ? (
+          <Route element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/remedios" element={<Remedios />} />
+            <Route path="/remedios/deletar" element={<DeletarRemedio />} />
+            <Route path="/remedios/cadastro" element={<CadastrarRemedio />} />
+            <Route path="/consultas" element={<Consultas />} />
+            <Route path="/consultas/deletar" element={<ConsultasDeletar />} />
+            <Route path="/consultas/cadastro" element={<ConsultasCadastrar />} />
+            <Route path="/exames" element={<Exames />} />
+            <Route path="/exames/deletar" element={<DeletarExames />} />
+            <Route path="/exames/cadastro" element={<CadastrarExames />} />
+          </Route>
+        ) : (
+          <Route index element={<Login />} />
+        )}
+
         <Route path="*" element={<Erro404 />} />
       </Routes>
     </BrowserRouter>
