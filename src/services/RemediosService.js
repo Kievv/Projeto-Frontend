@@ -5,7 +5,7 @@ export async function listRemedios() {
   let remedios = [];
 
   const remediosRef = collection(db, 'remedios');
-  const q = query(remediosRef, limit(10));
+  const q = query(remediosRef, limit(30));
 
   getDocs(q)
     .then((querySnapshot) => {
@@ -16,7 +16,7 @@ export async function listRemedios() {
     .catch((error) => {
       console.log('Error getting documents: ', error);
     });
-  console.log(remedios, 'Remedios');
+
   return remedios;
 }
 

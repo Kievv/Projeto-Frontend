@@ -13,7 +13,7 @@ export default function LoginForm(props) {
 
   const navigate = useNavigate();
 
-  const { handleLogin, logado } = useContext(UserContext);
+  const { handleLogin } = useContext(UserContext);
   const [errorLogin, setErrorLogin] = useState('');
 
   const validaEmail = {
@@ -44,9 +44,7 @@ export default function LoginForm(props) {
 
     await handleLogin(email, senha)
       .then(() => {
-        if (logado) {
-          navigate('/');
-        }
+        navigate('/');
       })
       .catch((err) => {
         setErrorLogin(err.message);
