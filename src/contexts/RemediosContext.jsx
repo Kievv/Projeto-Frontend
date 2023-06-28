@@ -28,6 +28,7 @@ export function RemediosContextProvider(props) {
     } catch (err) {
       throw Error(err.message);
     }
+    console.log(meusRemedios, 'Meus Remedios');
   }
 
   const contexto = {
