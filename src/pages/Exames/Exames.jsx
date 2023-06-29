@@ -15,10 +15,10 @@ const Exames = () => {
           horario="14:20"
         />
         <div className="btn-holder">
-          <Link href="/exames/cadastro">
+          <Link to="/exames/cadastro">
             <Botao botao="CADASTRAR" classe="cadastrar" />
           </Link>
-          <Link href="/exames/delete">
+          <Link to="/exames/delete">
             <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>
