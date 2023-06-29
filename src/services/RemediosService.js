@@ -1,21 +1,14 @@
 import { getFirestore, doc, collection, addDoc, getDocs, query, where, limit } from 'firebase/firestore';
 import { app, db } from './firebaseConfig';
+import { getAuth } from 'firebase/auth';
 
 export async function listRemedios() {
-  let remedios = [];
+  const remedios = [];
 
-  const remediosRef = collection(db, 'remedios');
-  const q = query(remediosRef, limit(30));
-
-  getDocs(q)
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        remedios.push({ id: doc.id, ...doc.data() });
-      });
-    })
-    .catch((error) => {
-      console.log('Error getting documents: ', error);
-    });
+  const resposta = await getDocs(collection(db, 'remedios'));
+  resposta.forEach((doc) => {
+    remedios.push({ key: doc.id, ...doc.data() });
+  });
 
   return remedios;
 }

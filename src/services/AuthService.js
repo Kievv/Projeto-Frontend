@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth';
 
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 auth.onAuthStateChanged((user) => {
   if (user) {
