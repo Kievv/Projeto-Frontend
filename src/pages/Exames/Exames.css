@@ -37,3 +37,7 @@ button{
     border-radius: 10px;
     cursor: pointer;
 }
+
+.botao-voltar {
+    background-color: #007C7D;
+}

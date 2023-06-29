@@ -8,7 +8,9 @@ const Consultas = () => {
     <>
       <div className="layout-consultas">
         <h1 className='titulo'>Suas consultas do dia</h1>
-        <Tabela hospital="DAHER" medico="Giuseppe Camolli" horario="14:50" />
+        <div>
+          <Tabela hospital="DAHER" medico="Giuseppe Camolli" horario="14:50" />
+        </div>
         <div className="btn-holder">
           <Link to="/consultas/cadastro">
             <Botao botao="CADASTRAR" classe="cadastro" />

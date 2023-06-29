@@ -5,6 +5,7 @@ import CampoTexto from '../CampoTexto';
 import { useContext } from 'react';
 import UserContext from '../../contexts/UserContext';
 import Botao from '../Botao';
+import './consulta.css'
 
 const Formulario = () => {
   const navigate = useNavigate();
@@ -42,8 +43,8 @@ const Formulario = () => {
 
   return (
     <>
-      <form className="formsContainer">
-        <div className="formDiv">
+      <form className="container-form-consulta">
+        <div className="container-consulta">
           <CampoTexto
             type="text"
             label="ESPECIALIDADE"
@@ -55,7 +56,7 @@ const Formulario = () => {
             validateSchema={validateSchema}
             errors={errors}
           />
-          <div className="texto-duplo">
+          <div className="texto-consulta">
             <CampoTexto
               type="text"
               label="CLINICA"
@@ -79,10 +80,11 @@ const Formulario = () => {
               validateSchema={validateSchema}
               errors={errors}
             />
-
-            <CampoTexto
+          </div>
+          <div className="texto-consulta">
+          <CampoTexto
               type="text"
-              label="DIA"
+              label="DIA / MÊS"
               campo="texto"
               item="dia"
               name="dia"
@@ -91,8 +93,6 @@ const Formulario = () => {
               validateSchema={validateSchema}
               errors={errors}
             />
-          </div>
-          <div className="texto-duplo">
             <CampoTexto
               type="text"
               label="HORARIO"

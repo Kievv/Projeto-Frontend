@@ -16,6 +16,7 @@
     font-weight: bold;
 }
 
-.botao {
+.botao-voltar {
     color: white;
+    background-color: #007C7D;
 }
