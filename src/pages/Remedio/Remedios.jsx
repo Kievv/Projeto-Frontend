@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import TabelaRemedio from '../../components/remedios/Tabela';
 import UserContext from '../../contexts/UserContext';
 import { useContext } from 'react';
+import './Remedio.css'
 
 const Remedios = () => {
   const { userId } = useContext(UserContext);

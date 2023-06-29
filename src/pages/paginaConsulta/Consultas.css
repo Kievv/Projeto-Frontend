@@ -17,7 +17,7 @@ button{
     
 }
 
-.cadastrar {
+.cadastro {
     background-color: #FFA300;
     color: black;
     font-weight: bold;
@@ -33,6 +33,10 @@ button{
     background-color: #99C24D;
     color: black;
     font-weight: bold;
+}
+
+.titulo {
+    text-align: center;
 }
 
 h3 {
