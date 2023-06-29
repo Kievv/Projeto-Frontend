@@ -1,100 +1,110 @@
-// import { app, database } from '../../services/firebaseConfig';
-import { collection, addDoc } from 'firebase/firestore';
-import { useState } from 'react';
-import Botao from '../../components/Botao';
-import CampoTexto from '../../components/CampoTexto';
-
-// const dbInstance = collection(database, 'exames');
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { addExame } from '../../services/ExamesService';
+import CampoTexto from '../CampoTexto';
+import { useContext } from 'react';
+import UserContext from '../../contexts/UserContext';
+import Botao from '../Botao';
 
 const Formulario = () => {
-  const [exame, setExame] = useState('');
-  const [clinica, setClinica] = useState('');
-  const [local, setLocal] = useState('');
-  const [dia, setDia] = useState('');
-  const [horario, setHorario] = useState('');
+  const navigate = useNavigate();
 
-  const cadastrarExame = () => {
-    addDoc(dbInstance, {
-      exame: exame,
-      clinica: clinica,
-      local: local,
-      dia: dia,
-      horario: horario,
-    });
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-  const handleChangeExame = (event) => {
-    setExame(event.target.value);
+  const { userId } = useContext(UserContext);
+
+  const validateSchema = {
+    required: {
+      value: true,
+      message: 'Campo obrigatório',
+    },
+    minLength: {
+      value: 3,
+      message: 'Campo deve ter no mínimo 3 caracteres',
+    },
   };
-  const handleChangeClinica = (event) => {
-    setClinica(event.target.value);
-  };
-  const handleChangeLocal = (event) => {
-    setLocal(event.target.value);
-  };
-  const handleChangeDia = (event) => {
-    setDia(event.target.value);
-  };
-  const handleChangeHorario = (event) => {
-    setHorario(event.target.value);
+  const validateSchemaOpcional = {
+    required: {
+      value: false,
+    },
   };
 
-  return (
-    <>
-      <form className="formsContainer">
-        <div className="formDiv">
-          <CampoTexto
-            label="EXAME"
-            campo="texto"
-            item="exame"
-            placeholder="Digite aqui o nome do exame..."
-            onChange={handleChangeExame}
-            value={exame}
-          />
-          <div className="texto-duplo">
+  async function onSubmit(data) {
+    await addExame(data, userId);
+    reset();
+    navigate('/exames');
+
+    return (
+      <>
+        <form className="formsContainer">
+          <div className="formDiv">
             <CampoTexto
-              label="CLÍNICA"
+              type="text"
+              label="EXAME"
               campo="texto"
-              item="clinica"
-              placeholder="Nome da clínica..."
-              onChange={handleChangeClinica}
-              value={clinica}
+              item="exame"
+              placeholder="Digite aqui o nome do exame..."
+              register={register}
+              validateSchema={validateSchema}
+              errors={errors}
             />
+            <div className="texto-duplo">
+              <CampoTexto
+                type="text"
+                label="CLÍNICA"
+                campo="texto"
+                item="clinica"
+                placeholder="Nome da clínica..."
+                register={register}
+                validateSchema={validateSchema}
+                errors={errors}
+              />
 
-            <CampoTexto
-              label="LOCAL"
-              campo="texto"
-              item="local"
-              placeholder="Informe o local da consulta..."
-              onChange={handleChangeLocal}
-              value={local}
-            />
+              <CampoTexto
+                type="text"
+                label="LOCAL"
+                campo="texto"
+                item="local"
+                placeholder="Informe o local da consulta..."
+                register={register}
+                validateSchema={validateSchema}
+                errors={errors}
+              />
+            </div>
+            <div className="texto-duplo">
+              <CampoTexto
+                type="text"
+                label="DIA"
+                campo="texto"
+                item="dia"
+                placeholder="Digite o dia do exame..."
+                register={register}
+                validateSchema={validateSchema}
+                errors={errors}
+              />
+              <CampoTexto
+                type="text"
+                label="HORÁRIO"
+                campo="texto"
+                item="horario"
+                placeholder="Digite o horário do exame..."
+                register={register}
+                validateSchema={validateSchema}
+                errors={errors}
+              />
+            </div>
+            <div className="btn-holder">
+              <Botao botao="CADASTRAR" classe="cadastrar" />
+            </div>
           </div>
-          <div className="texto-duplo">
-            <CampoTexto
-              label="DIA"
-              campo="texto"
-              item="dia"
-              placeholder="Digite o dia do exame..."
-              onChange={handleChangeDia}
-              value={dia}
-            />
-            <CampoTexto
-              label="HORÁRIO"
-              campo="texto"
-              item="horario"
-              placeholder="Digite o horário do exame..."
-              onChange={handleChangeHorario}
-              value={horario}
-            />
-          </div>
-          <div className="btn-holder">
-            <Botao botao="CADASTRAR" classe="cadastrar" />
-          </div>
-        </div>
-      </form>
-    </>
-  );
+        </form>
+      </>
+    );
+  }
 };
-
 export default Formulario;
