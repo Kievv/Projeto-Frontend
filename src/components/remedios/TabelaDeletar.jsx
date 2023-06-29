@@ -1,10 +1,11 @@
 import { useEffect, useState, useContext } from 'react';
 import RemediosContext from '../../contexts/RemediosContext';
 import { useNavigate } from 'react-router';
-import Botao from '../Botao';
+import UserContext from '../../contexts/UserContext';
 
 const TabelaDeleteRemedio = () => {
   const { remedios, listRemedios, removerRemedio } = useContext(RemediosContext);
+  const { userId } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -22,13 +23,15 @@ const TabelaDeleteRemedio = () => {
     await removerRemedio(key);
     navigate('/remedios');
   }
+
+  const remediosFiltrados = remedios.filter((remedio) => remedio.userId === userId);
   return (
     <>
       {loading ? (
         <h3>Aguarde</h3>
       ) : (
         <ul>
-          {remedios.map((remedio, key) => {
+          {remediosFiltrados.map((remedio, key) => {
             return (
               <li key={key}>
                 <p>

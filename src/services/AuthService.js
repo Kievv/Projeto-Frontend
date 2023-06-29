@@ -31,6 +31,20 @@ export async function login(email, senha) {
     });
 }
 
+export async function register(email, senha) {
+  return await createUserWithEmailAndPassword(auth, email, senha)
+    .then((userCredential) => userCredential.user.uid)
+    .catch((error) => {
+      if (error.code == 'auth/email-already-in-use') {
+        throw Error('E-mail já cadastrado');
+      } else if (error.code == 'auth/invalid-email') {
+        throw Error('E-mail inválido');
+      } else if (error.code == 'auth/weak-password') {
+        throw Error('Senha fraca');
+      }
+    });
+}
+
 export async function logout() {
   await signOut(auth);
 }

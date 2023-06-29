@@ -15,6 +15,7 @@ import Exames from './pages/Exames/Exames';
 import DeletarExames from './pages/Exames/DeletarExames';
 import CadastrarExames from './pages/Exames/CadastrarExames';
 import Login from './pages/Login/Login';
+import Registrar from './pages/Login/Registrar';
 
 function App() {
   const { logado } = useContext(UserContext);
@@ -35,7 +36,10 @@ function App() {
             <Route path="/exames/cadastro" element={<CadastrarExames />} />
           </Route>
         ) : (
-          <Route index element={<Login />} />
+          <>
+            <Route index element={<Login />} />
+            <Route path="/registrar" element={<Registrar />} />
+          </>
         )}
 
         <Route path="*" element={<Erro404 />} />

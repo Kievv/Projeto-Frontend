@@ -1,8 +1,10 @@
 import { useEffect, useState, useContext } from 'react';
 import ExamesContext from '../../contexts/ExamesContext';
+import UserContext from '../../contexts/UserContext';
 
 const TabelaExame = () => {
   const { exames, listExames } = useContext(ExamesContext);
+  const { userId } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -14,13 +16,15 @@ const TabelaExame = () => {
     carrega();
   }, []);
 
+  const examesFiltrados = exames.filter((exame) => exame.userId === userId);
+
   return (
     <>
       {loading ? (
         <h3>Aguarde</h3>
       ) : (
         <ul>
-          {exames.map((exame, key) => {
+          {examesFiltrados.map((exame, key) => {
             return (
               <li key={key}>
                 <p>

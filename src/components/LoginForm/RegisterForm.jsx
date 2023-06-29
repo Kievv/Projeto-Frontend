@@ -5,7 +5,7 @@ import UserContext from '../../contexts/UserContext';
 import Button from '../Botao';
 import './LoginForm.css';
 
-export default function LoginForm(props) {
+export default function RegisterForm(props) {
   const {
     register,
     handleSubmit,
@@ -14,7 +14,7 @@ export default function LoginForm(props) {
 
   const navigate = useNavigate();
 
-  const { handleLogin } = useContext(UserContext);
+  const { handleRegister } = useContext(UserContext);
   const [errorLogin, setErrorLogin] = useState('');
 
   const validaEmail = {
@@ -43,7 +43,7 @@ export default function LoginForm(props) {
     const { email, senha } = data;
     setErrorLogin('');
 
-    await handleLogin(email, senha)
+    await handleRegister(email, senha)
       .then(() => {
         navigate('/');
       })
@@ -67,8 +67,7 @@ export default function LoginForm(props) {
           {errors.senha && <p className="error">{errors.senha.message}</p>}
         </div>
         <div className="botao-login">
-          <Button handleClick={handleSubmit(onSubmit)} classe="btn btn-primary" botao="Entrar" />
-          <Button handleClick={() => navigate('/registrar')} classe="btn btn-primary" botao="Cadastrar" />
+          <Button handleClick={handleSubmit(onSubmit)} classe="btn btn-primary" botao="Cadastrar" />
         </div>
         {errorLogin && <p className="error">{errorLogin}</p>}
       </form>

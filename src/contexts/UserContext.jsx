@@ -1,11 +1,12 @@
 import { createContext, useState } from 'react';
-import { login, logout } from '../services/AuthService';
+import { login, logout, register } from '../services/AuthService';
 
 const UserContext = createContext({
   userId: null,
   logado: false,
   handleLogin: () => {},
   handleLogout: () => {},
+  handleRegister: () => {},
 });
 
 export function UserContextProvider(props) {
@@ -27,11 +28,20 @@ export function UserContextProvider(props) {
       });
   }
 
+  async function handleRegister(email, password) {
+    await register(email, password)
+      .then((id) => setCurrentUser({ userId: id, logado: true }))
+      .catch((error) => {
+        throw Error(error.message);
+      });
+  }
+
   const contexto = {
     userId: currentUser.userId,
     logado: currentUser.logado,
     handleLogin,
     handleLogout,
+    handleRegister,
   };
 
   return <UserContext.Provider value={contexto}>{props.children}</UserContext.Provider>;
