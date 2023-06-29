@@ -1,11 +1,11 @@
 import { createContext, useState } from 'react';
-import { addExame, listExames } from '../services/ExamesService';
+import { addExame, listExames, removerExame } from '../services/ExamesService';
 
 const ExamesContext = createContext({
   exames: [],
   listExames: () => {},
   addExame: () => {},
-  removeExame: () => {},
+  removerExame: () => {},
 });
 
 export function ExamesContextProvider(props) {
@@ -31,7 +31,7 @@ export function ExamesContextProvider(props) {
 
   async function remover(key) {
     try {
-      await removeExame(key);
+      await removerExame(key);
       setMeusExames((valorAntigo) => valorAntigo.filter((exame) => exame.id !== key));
     } catch (err) {
       throw Error(err.message);
@@ -42,7 +42,7 @@ export function ExamesContextProvider(props) {
     exames: meusExames,
     addExame: inserir,
     listExames: listar,
-    removeExame: remover,
+    removerExame: remover,
   };
 
   return <ExamesContext.Provider value={contexto}>{props.children}</ExamesContext.Provider>;

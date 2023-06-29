@@ -23,6 +23,6 @@ export async function addConsulta(data, userId) {
   });
 }
 
-export async function removeConsulta(key) {
+export async function removerConsulta(key) {
   await deleteDoc(doc(db, 'consultas', key));
 }

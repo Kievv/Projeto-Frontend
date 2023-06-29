@@ -32,7 +32,6 @@ const TabelaConsulta = () => {
           })}
         </ul>
       )}
-      ;
     </>
   );
 };

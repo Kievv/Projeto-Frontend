@@ -1,9 +1,12 @@
 import { useEffect, useState, useContext } from 'react';
 import RemediosContext from '../../contexts/RemediosContext';
+import { useNavigate } from 'react-router';
+import Botao from '../Botao';
 
-const TabelaRemedio = () => {
-  const { remedios, listRemedios } = useContext(RemediosContext);
+const TabelaDeleteRemedio = () => {
+  const { remedios, listRemedios, removerRemedio } = useContext(RemediosContext);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function carrega() {
@@ -15,6 +18,10 @@ const TabelaRemedio = () => {
     carrega();
   }, []);
 
+  async function handleRemover(key) {
+    await removerRemedio(key);
+    navigate('/remedios');
+  }
   return (
     <>
       {loading ? (
@@ -27,6 +34,7 @@ const TabelaRemedio = () => {
                 <p>
                   {remedio.medicamento} - {remedio.dosagem} - {remedio.miligramagem} - {remedio.horario}
                 </p>
+                <button onClick={() => handleRemover(remedio.key)} />
               </li>
             );
           })}
@@ -36,4 +44,4 @@ const TabelaRemedio = () => {
   );
 };
 
-export default TabelaRemedio;
+export default TabelaDeleteRemedio;

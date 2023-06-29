@@ -22,6 +22,6 @@ export async function addRemedio(data, userId) {
   });
 }
 
-export async function removeRemedio(key) {
+export async function removerRemedio(key) {
   await deleteDoc(doc(db, 'remedios', key));
 }
