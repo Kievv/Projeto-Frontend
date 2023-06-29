@@ -38,7 +38,7 @@ const TabelaDeleteExame = () => {
                 <p>
                   {exame.especialidade} - {exame.clinica} - {exame.local} - {exame.dia} - {exame.horario}
                 </p>
-                <button onClick={() => handleRemover(exame.key)}>DELETAR ACIMA</button>
+                <button onClick={() => handleRemover(exame.key)}>DELETAR EXAME</button>
               </li>
             );
           })}

@@ -20,7 +20,9 @@ const TabelaExame = () => {
 
   return (
     <>
-      {loading ? (
+      {examesFiltrados.length === 0 ? (
+        <h3>Nenhum exame cadastrado</h3>
+      ) : loading ? (
         <h3>Aguarde</h3>
       ) : (
         <ul>

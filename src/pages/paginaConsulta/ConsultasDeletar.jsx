@@ -7,9 +7,9 @@ const ConsultasDeletar = () => {
     <>
       <div className="layout-consultas">
         <h1>Faça a exclusão de consultas</h1>
-        <h3>Basta clicar nas caixas na lateral da tabela e apertar o botão "DELETAR"</h3>
-        <div className='tabelas-deletar'>
-        <TabelaDeleteConsulta />
+        <h3>Basta clicar em "DELETAR CONSULTA"</h3>
+        <div className="tabelas-deletar">
+          <TabelaDeleteConsulta />
         </div>
         <div className="btn-holder">
           <Link to="/consultas">

@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
 import Button from '../Botao';
 import './LoginForm.css';
@@ -54,7 +54,7 @@ export default function RegisterForm(props) {
 
   return (
     <div className="div-login">
-      <h1>Login</h1>
+      <h1>Cadastrar</h1>
       <form className="loginForm">
         <div>
           <label htmlFor="email">E-mail</label>
@@ -68,6 +68,9 @@ export default function RegisterForm(props) {
         </div>
         <div className="botao-login">
           <Button handleClick={handleSubmit(onSubmit)} classe="btn btn-primary" botao="Cadastrar" />
+          <Link to="/">
+            <Button botao="VOLTAR" classe="delete" />
+          </Link>
         </div>
         {errorLogin && <p className="error">{errorLogin}</p>}
       </form>

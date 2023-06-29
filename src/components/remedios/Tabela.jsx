@@ -21,7 +21,9 @@ const TabelaRemedio = () => {
 
   return (
     <>
-      {loading ? (
+      {remediosFiltrados.length === 0 ? (
+        <h3>Nenhum remédio cadastrado</h3>
+      ) : loading ? (
         <h3>Aguarde</h3>
       ) : (
         <ul>

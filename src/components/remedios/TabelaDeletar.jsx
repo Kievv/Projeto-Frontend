@@ -37,7 +37,7 @@ const TabelaDeleteRemedio = () => {
                 <p>
                   {remedio.medicamento} - {remedio.dosagem} - {remedio.miligramagem} - {remedio.horario}
                 </p>
-                <button onClick={() => handleRemover(remedio.key)}>DELETAR ACIMA</button>
+                <button onClick={() => handleRemover(remedio.key)}>DELETAR REMEDIO</button>
               </li>
             );
           })}

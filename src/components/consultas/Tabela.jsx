@@ -21,7 +21,9 @@ const TabelaConsulta = () => {
 
   return (
     <>
-      {loading ? (
+      {consultasFiltradas.length === 0 ? (
+        <h3>Nenhuma consulta cadastrada</h3>
+      ) : loading ? (
         <h3>Aguarde</h3>
       ) : (
         <ul>

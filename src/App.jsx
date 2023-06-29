@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import UserContext from './contexts/UserContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Layout from './components/Layout';
+import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home';
 import Erro404 from './pages/Erro404';
 import Consultas from './pages/paginaConsulta/Consultas';

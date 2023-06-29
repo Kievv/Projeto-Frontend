@@ -7,11 +7,10 @@ const DeletarExame = () => {
     <>
       <div className="layout-exames">
         <h1>Faça a exclusão dos seus exames</h1>
-        <h3>Basta clicar nas caixas na lateral da tabela e clicar em "DELETAR"</h3>
-        <div className='tabelas-deletar'>
-        <TabelaDeleteExame />
+        <h3>Basta clicar em "DELETAR EXAME"</h3>
+        <div className="tabelas-deletar">
+          <TabelaDeleteExame />
         </div>
-        
 
         <div className="btn-holder">
           <Link to="/exames">
