@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Botao from '../../components/Botao';
 import Formulario from '../../components/exames/Formulario';
 
+
 const CadastrarExames = () => {
   return (
     <>
@@ -11,10 +12,10 @@ const CadastrarExames = () => {
         <Formulario />
 
         <div className="btn-holder">
-          <Link href="/exames">
-            <Botao botao="VOLTAR" classe="voltar" />
+          <Link to="/exames">
+            <Botao botao="VOLTAR" className="botao-voltar" />
           </Link>
-          <Link href="/exames/delete">
+          <Link to="/exames/delete">
             <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>

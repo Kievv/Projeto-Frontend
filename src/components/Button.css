@@ -6,12 +6,16 @@
 
 .deletar {
     background-color: #99C24D;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 .voltar {
     background-color: #007C7D;
-    color: black;
+    color: white;
     font-weight: bold;
+}
+
+.botao {
+    color: white;
 }

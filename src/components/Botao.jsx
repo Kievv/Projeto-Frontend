@@ -1,3 +1,5 @@
+import './Button.css'
+
 const Botao = (props) => {
   return (
     <>
