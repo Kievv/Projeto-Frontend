@@ -8,13 +8,7 @@ const Exames = () => {
     <>
       <div className="layout-exames">
         <h1>Seu mural de Exames</h1>
-        <TabelaExame
-          exame="Eletrocardiograma"
-          clinica="Gastrolago"
-          local="Hospital Daher"
-          dia="02/05"
-          horario="14:20"
-        />
+        <TabelaExame />
         <div className="btn-holder">
           <Link to="/exames/cadastro">
             <Botao botao="CADASTRAR" classe="cadastrar" />

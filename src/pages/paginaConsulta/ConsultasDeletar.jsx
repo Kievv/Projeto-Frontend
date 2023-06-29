@@ -10,10 +10,10 @@ const ConsultasDeletar = () => {
         <h3>Basta clicar nas caixas na lateral da tabela e apertar o botão "DELETAR"</h3>
         <Tabela hospital="DAHER" medico="Giuseppe Camolli" horario="14:50" exibirCheckbox={true} />
         <div className="btn-holder">
-          <Link href="/consultas">
+          <Link to="/consultas">
             <Botao botao="VOLTAR" classe="voltar" />
           </Link>
-          <Link href="/consultas/delete">
+          <Link to="/consultas/delete">
             <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>

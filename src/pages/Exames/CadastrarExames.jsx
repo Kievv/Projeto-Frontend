@@ -13,7 +13,11 @@ const CadastrarExames = () => {
 
         <div className="btn-holder">
           <Link to="/exames">
+<<<<<<< HEAD
             <Botao botao="VOLTAR" className="botao-voltar" />
+=======
+            <Botao botao="VOLTAR" classe="voltar" />
+>>>>>>> 6fe7e460763996ba099ebbe350fac8bc19f05912
           </Link>
           <Link to="/exames/delete">
             <Botao botao="DELETAR" classe="delete" />

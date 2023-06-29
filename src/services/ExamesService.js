@@ -1,6 +1,5 @@
-import { getFirestore, doc, collection, addDoc, getDocs, query, where, limit } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, where, limit, deleteDoc } from 'firebase/firestore';
 import { app, db } from './firebaseConfig';
-import { getAuth } from 'firebase/auth';
 
 export async function listExames() {
   const exames = [];
@@ -22,4 +21,8 @@ export async function addExame(data, userId) {
     horario: data.horario,
     userId: userId,
   });
+}
+
+export async function removeExame(key) {
+  await deleteDoc(doc(db, 'exames', key));
 }

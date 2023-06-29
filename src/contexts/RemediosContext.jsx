@@ -5,6 +5,7 @@ const RemediosContext = createContext({
   remedios: [],
   listRemedios: () => {},
   addRemedio: () => {},
+  removeRemedio: () => {},
 });
 
 export function RemediosContextProvider(props) {
@@ -28,10 +29,20 @@ export function RemediosContextProvider(props) {
     }
   }
 
+  async function remover(key) {
+    try {
+      await removeRemedio(key);
+      setMeusRemedios((valorAntigo) => valorAntigo.filter((remedio) => remedio.id !== key));
+    } catch (err) {
+      throw Error(err.message);
+    }
+  }
+
   const contexto = {
     remedios: meusRemedios,
     addRemedio: inserir,
     listRemedios: listar,
+    removeRemedio: remover,
   };
 
   return <RemediosContext.Provider value={contexto}>{props.children}</RemediosContext.Provider>;
