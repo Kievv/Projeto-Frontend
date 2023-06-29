@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom';
 import Botao from '../../components/Botao';
-import Tabela from '../../components/consultas/Tabela';
-import './Consultas.css'
+
+import './Consultas.css';
+import TabelaConsulta from '../../components/consultas/Tabela';
 
 const Consultas = () => {
   return (
     <>
       <div className="layout-consultas">
-        <h1 className='titulo'>Suas consultas do dia</h1>
-        <div>
-          <Tabela hospital="DAHER" medico="Giuseppe Camolli" horario="14:50" />
-        </div>
+        <h1 className="titulo">Suas consultas do dia</h1>
+        <TabelaConsulta />
         <div className="btn-holder">
           <Link to="/consultas/cadastro">
             <Botao botao="CADASTRAR" classe="cadastro" />

@@ -23,6 +23,6 @@ export async function addExame(data, userId) {
   });
 }
 
-export async function removeExame(key) {
+export async function removerExame(key) {
   await deleteDoc(doc(db, 'exames', key));
 }

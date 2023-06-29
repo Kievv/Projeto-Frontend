@@ -25,13 +25,13 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/remedios" element={<Remedios />} />
-            <Route path="/remedios/deletar" element={<DeletarRemedio />} />
+            <Route path="/remedios/delete" element={<DeletarRemedio />} />
             <Route path="/remedios/cadastro" element={<CadastrarRemedio />} />
             <Route path="/consultas" element={<Consultas />} />
-            <Route path="/consultas/deletar" element={<ConsultasDeletar />} />
+            <Route path="/consultas/delete" element={<ConsultasDeletar />} />
             <Route path="/consultas/cadastro" element={<ConsultasCadastrar />} />
             <Route path="/exames" element={<Exames />} />
-            <Route path="/exames/deletar" element={<DeletarExames />} />
+            <Route path="/exames/delete" element={<DeletarExames />} />
             <Route path="/exames/cadastro" element={<CadastrarExames />} />
           </Route>
         ) : (

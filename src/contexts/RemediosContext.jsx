@@ -1,11 +1,11 @@
 import { createContext, useState } from 'react';
-import { addRemedio, listRemedios } from '../services/RemediosService';
+import { addRemedio, listRemedios, removerRemedio } from '../services/RemediosService';
 
 const RemediosContext = createContext({
   remedios: [],
   listRemedios: () => {},
   addRemedio: () => {},
-  removeRemedio: () => {},
+  removerRemedio: () => {},
 });
 
 export function RemediosContextProvider(props) {
@@ -31,7 +31,7 @@ export function RemediosContextProvider(props) {
 
   async function remover(key) {
     try {
-      await removeRemedio(key);
+      await removerRemedio(key);
       setMeusRemedios((valorAntigo) => valorAntigo.filter((remedio) => remedio.id !== key));
     } catch (err) {
       throw Error(err.message);
@@ -42,7 +42,7 @@ export function RemediosContextProvider(props) {
     remedios: meusRemedios,
     addRemedio: inserir,
     listRemedios: listar,
-    removeRemedio: remover,
+    removerRemedio: remover,
   };
 
   return <RemediosContext.Provider value={contexto}>{props.children}</RemediosContext.Provider>;
