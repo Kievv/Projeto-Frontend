@@ -28,11 +28,12 @@
     z-index: -1;
 }
 
-.btn-holder{
+.btn-home{
     margin: 5% 0 5% 0;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .botaoHome {
     background-color: #007C7D;

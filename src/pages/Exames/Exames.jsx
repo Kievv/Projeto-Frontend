@@ -8,7 +8,9 @@ const Exames = () => {
     <>
       <div className="layout-exames">
         <h1>Seu mural de Exames</h1>
-        <TabelaExame />
+        <div className='tabelas'>
+          <TabelaExame />
+        </div>
         <div className="btn-holder">
           <Link to="/exames/cadastro">
             <Botao botao="CADASTRAR" classe="cadastrar" />

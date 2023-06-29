@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Botao from '../../components/Botao';
-
 import './Consultas.css';
 import TabelaConsulta from '../../components/consultas/Tabela';
 
@@ -9,7 +8,9 @@ const Consultas = () => {
     <>
       <div className="layout-consultas">
         <h1 className="titulo">Suas consultas do dia</h1>
-        <TabelaConsulta />
+        <div className='tabelas'>
+          <TabelaConsulta />
+        </div>
         <div className="btn-holder">
           <Link to="/consultas/cadastro">
             <Botao botao="CADASTRAR" classe="cadastro" />

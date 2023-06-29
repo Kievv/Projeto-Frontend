@@ -51,7 +51,7 @@ const Home = () => {
           <Botao handleClick={handleLogout} classe="btn btn-primary" botao="SAIR" />
         </div>
 
-        <div className="btn-holder">
+        <div className="btn-home">
           <Link to="/remedios">
             <Botao botao="REMEDIOS" classe="botaoHome" />
           </Link>

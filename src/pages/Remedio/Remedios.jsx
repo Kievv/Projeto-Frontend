@@ -10,7 +10,9 @@ const Remedios = () => {
     <>
       <div className="layout-remedios">
         <h1>Seus Remédios do dia</h1>
-        <TabelaRemedio />
+        <div className='tabelas'>
+          <TabelaRemedio />
+        </div>
         <div className="btn-holder">
           <Link to="/remedios/cadastro">
             <Botao botao="CADASTRAR" classe="cadastro" />
