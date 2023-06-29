@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Botao from '../../components/Botao';
 import TabelaExame from '../../components/exames/Tabela';
+import './Exames.css'
 
 const Exames = () => {
   return (
