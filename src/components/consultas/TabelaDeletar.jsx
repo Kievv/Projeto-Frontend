@@ -33,7 +33,7 @@ const TabelaDeleteConsulta = () => {
                 <p>
                   {consulta.especialidade} - {consulta.clinica} - {consulta.local} - {consulta.dia} - {consulta.horario}
                 </p>
-                <button onClick={() => handleRemover(consulta.key)} />
+                <button onClick={() => handleRemover(consulta.key)} >DELETAR ACIMA</button>
               </li>
             );
           })}
