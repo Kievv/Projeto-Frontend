@@ -22,9 +22,7 @@ export function RemediosContextProvider(props) {
   async function listar() {
     try {
       const data = await listRemedios();
-      setMeusRemedios(data);
-      console.log(meusRemedios, 'Meus Remedios');
-      return meusRemedios;
+      setMeusRemedios(await data);
     } catch (err) {
       throw Error(err.message);
     }

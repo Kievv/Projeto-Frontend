@@ -10,10 +10,8 @@ const TabelaRemedio = (props) => {
   useEffect(() => {
     async function carrega() {
       setLoading(true);
-      await listRemedios().then((data) => {
-        setMedicamento(data);
-        setLoading(false);
-      });
+      await listRemedios();
+      setLoading(false);
     }
 
     carrega();
@@ -25,7 +23,7 @@ const TabelaRemedio = (props) => {
         <h3>Aguarde</h3>
       ) : (
         <ul>
-          {medicamento.map((remedio, key) => {
+          {remedios.map((remedio, key) => {
             return (
               <li key={key}>
                 <p>
