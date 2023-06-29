@@ -1,15 +1,17 @@
+import './CampoTexto.css'
+
 const CampoTexto = (props) => {
   return (
     <>
-      <div className="container">
-        <label className={`campo-${props.campo}`}>
+      <div className="container-campoTexto">
+        <label className="campo-texto-label">
           {props.label}
           <input
             type={props.type}
             name={props.name}
             {...props.register(props.name, props.validateSchema)}
             id={props.item}
-            className={props.campo}
+            className="campoTexto-input"
             placeholder={props.placeholder}
           />
         </label>

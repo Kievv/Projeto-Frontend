@@ -5,6 +5,7 @@ import CampoTexto from '../CampoTexto';
 import { useContext } from 'react';
 import UserContext from '../../contexts/UserContext';
 import Botao from '../Botao';
+import './remedio.css'
 
 const Formulario = () => {
   const navigate = useNavigate();
@@ -41,8 +42,8 @@ const Formulario = () => {
 
   return (
     <>
-      <form className="container">
-        <div className="container">
+      <form className="container-form-remedio">
+        <div className="container-remedio">
           <CampoTexto
             type="text"
             label="MEDICAMENTO"
@@ -55,7 +56,7 @@ const Formulario = () => {
             errors={errors}
           />
 
-          <div className="texto">
+          <div className="texto-remedio">
             <CampoTexto
               type="text"
               label="DOSAGEM"
@@ -80,7 +81,7 @@ const Formulario = () => {
             />
           </div>
 
-          <div className="texto">
+          <div className="texto-remedio">
             <CampoTexto
               type="text"
               label="HORÁRIO"
@@ -116,7 +117,7 @@ const Formulario = () => {
             />
           </div>
 
-          <div className="btn-holder p-0.5">
+          <div className="btn-holder">
             <Botao botao="CADASTRAR" classe="cadastrar" handleClick={handleSubmit(onSubmit)} type="submit" />
           </div>
         </div>

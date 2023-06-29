@@ -1,0 +1,25 @@
+.container-campoTexto {
+    background-color: #007c7d;
+    color: white;
+    margin-left: 3%;
+}
+
+
+
+.container-campoTexto label {
+    color: white
+}
+
+.campoTexto-input {
+    border: 1px solid #007c7d;
+}
+
+.campoTexto-input:focus {
+    outline: none; /* Remove a borda de destaque padrão */
+    border: 1px solid #FFA300; /* Adiciona uma sombra de destaque */
+}
+
+.texto-remedio{
+    color: black;
+}
+
