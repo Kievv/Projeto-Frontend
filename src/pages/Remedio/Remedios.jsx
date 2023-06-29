@@ -1,16 +1,13 @@
 import Botao from '../../components/Botao';
 import { Link } from 'react-router-dom';
 import TabelaRemedio from '../../components/remedios/Tabela';
-import UserContext from '../../contexts/UserContext';
-import { useContext } from 'react';
 
 const Remedios = () => {
-  const { userId } = useContext(UserContext);
   return (
     <>
       <div className="layout-remedios">
         <h1>Seus Remédios do dia</h1>
-        <TabelaRemedio userId={userId} />
+        <TabelaRemedio />
         <div className="btn-holder">
           <Link to="/remedios/cadastro">
             <Botao botao="CADASTRAR" classe="cadastro" />

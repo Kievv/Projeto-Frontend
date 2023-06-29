@@ -5,15 +5,16 @@ const ExamesContext = createContext({
   exames: [],
   listExames: () => {},
   addExame: () => {},
+  removeExame: () => {},
 });
 
 export function ExamesContextProvider(props) {
   const [meusExames, setMeusExames] = useState([]);
 
-  async function inserir(Exame) {
+  async function inserir(exame) {
     try {
       await addExame(Exame);
-      setMeusExames([...meusExames, Exame]);
+      setMeusExames([...meusExames, exame]);
     } catch (err) {
       throw Error(err.message);
     }
@@ -28,10 +29,20 @@ export function ExamesContextProvider(props) {
     }
   }
 
+  async function remover(key) {
+    try {
+      await removeExame(key);
+      setMeusExames((valorAntigo) => valorAntigo.filter((exame) => exame.id !== key));
+    } catch (err) {
+      throw Error(err.message);
+    }
+  }
+
   const contexto = {
-    Exames: meusExames,
+    exames: meusExames,
     addExame: inserir,
     listExames: listar,
+    removeExame: remover,
   };
 
   return <ExamesContext.Provider value={contexto}>{props.children}</ExamesContext.Provider>;

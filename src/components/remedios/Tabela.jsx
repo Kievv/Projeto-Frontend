@@ -1,11 +1,9 @@
 import { useEffect, useState, useContext } from 'react';
 import RemediosContext from '../../contexts/RemediosContext';
-import { set } from 'react-hook-form';
 
-const TabelaRemedio = (props) => {
+const TabelaRemedio = () => {
   const { remedios, listRemedios } = useContext(RemediosContext);
   const [loading, setLoading] = useState(false);
-  const [medicamento, setMedicamento] = useState([]);
 
   useEffect(() => {
     async function carrega() {

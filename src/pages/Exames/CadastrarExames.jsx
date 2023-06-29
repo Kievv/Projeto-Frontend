@@ -11,10 +11,10 @@ const CadastrarExames = () => {
         <Formulario />
 
         <div className="btn-holder">
-          <Link href="/exames">
+          <Link to="/exames">
             <Botao botao="VOLTAR" classe="voltar" />
           </Link>
-          <Link href="/exames/delete">
+          <Link to="/exames/delete">
             <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>

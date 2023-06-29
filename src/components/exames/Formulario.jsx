@@ -38,73 +38,78 @@ const Formulario = () => {
     await addExame(data, userId);
     reset();
     navigate('/exames');
-
-    return (
-      <>
-        <form className="formsContainer">
-          <div className="formDiv">
+  }
+  return (
+    <>
+      <form className="formsContainer">
+        <div className="formDiv">
+          <CampoTexto
+            type="text"
+            label="EXAME"
+            campo="texto"
+            item="exame"
+            name="exame"
+            placeholder="Digite aqui o nome do exame..."
+            register={register}
+            validateSchema={validateSchema}
+            errors={errors}
+          />
+          <div className="texto-duplo">
             <CampoTexto
               type="text"
-              label="EXAME"
+              label="CLÍNICA"
               campo="texto"
-              item="exame"
-              placeholder="Digite aqui o nome do exame..."
+              name="clinica"
+              item="clinica"
+              placeholder="Nome da clínica..."
               register={register}
               validateSchema={validateSchema}
               errors={errors}
             />
-            <div className="texto-duplo">
-              <CampoTexto
-                type="text"
-                label="CLÍNICA"
-                campo="texto"
-                item="clinica"
-                placeholder="Nome da clínica..."
-                register={register}
-                validateSchema={validateSchema}
-                errors={errors}
-              />
 
-              <CampoTexto
-                type="text"
-                label="LOCAL"
-                campo="texto"
-                item="local"
-                placeholder="Informe o local da consulta..."
-                register={register}
-                validateSchema={validateSchema}
-                errors={errors}
-              />
-            </div>
-            <div className="texto-duplo">
-              <CampoTexto
-                type="text"
-                label="DIA"
-                campo="texto"
-                item="dia"
-                placeholder="Digite o dia do exame..."
-                register={register}
-                validateSchema={validateSchema}
-                errors={errors}
-              />
-              <CampoTexto
-                type="text"
-                label="HORÁRIO"
-                campo="texto"
-                item="horario"
-                placeholder="Digite o horário do exame..."
-                register={register}
-                validateSchema={validateSchema}
-                errors={errors}
-              />
-            </div>
-            <div className="btn-holder">
-              <Botao botao="CADASTRAR" classe="cadastrar" />
-            </div>
+            <CampoTexto
+              type="text"
+              label="LOCAL"
+              campo="texto"
+              item="local"
+              name="local"
+              placeholder="Informe o local da consulta..."
+              register={register}
+              validateSchema={validateSchema}
+              errors={errors}
+            />
           </div>
-        </form>
-      </>
-    );
-  }
+          <div className="texto-duplo">
+            <CampoTexto
+              type="text"
+              label="DIA"
+              campo="texto"
+              item="dia"
+              name="dia"
+              placeholder="Digite o dia do exame..."
+              register={register}
+              validateSchema={validateSchema}
+              errors={errors}
+            />
+            <CampoTexto
+              type="text"
+              label="HORÁRIO"
+              campo="texto"
+              item="horario"
+              name="horario"
+              placeholder="Digite o horário do exame..."
+              register={register}
+              validateSchema={validateSchema}
+              errors={errors}
+            />
+          </div>
+          <div className="btn-holder">
+            <Botao botao="CADASTRAR" classe="cadastrar" handleClick={handleSubmit(onSubmit)} type="submit" />
+          </div>
+        </div>
+      </form>
+    </>
+  );
 };
+
 export default Formulario;

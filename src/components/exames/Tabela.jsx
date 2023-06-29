@@ -1,21 +1,38 @@
-const TabelaExame = (props) => {
+import { useEffect, useState, useContext } from 'react';
+import ExamesContext from '../../contexts/ExamesContext';
+
+const TabelaExame = () => {
+  const { exames, listExames } = useContext(ExamesContext);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    async function carrega() {
+      setLoading(true);
+      await listExames();
+      setLoading(false);
+    }
+    carrega();
+  }, []);
+
   return (
-    <table>
-      <thead>
-        <tr>
-          {props.exibirCheckbox && (
-            <td>
-              <input type="checkbox" name="deletar" id="check" className="checkbox" />
-            </td>
-          )}
-          <td>{props.exame}</td>
-          <td>{props.clinica}</td>
-          <td>{props.local}</td>
-          <td>{props.dia}</td>
-          <td className="last-column">{props.horario}</td>
-        </tr>
-      </thead>
-    </table>
+    <>
+      {loading ? (
+        <h3>Aguarde</h3>
+      ) : (
+        <ul>
+          {exames.map((exame, key) => {
+            return (
+              <li key={key}>
+                <p>
+                  {exame.exame} - {exame.clinica} - {exame.local} - {exame.dia} - {exame.horario}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      ;
+    </>
   );
 };
 

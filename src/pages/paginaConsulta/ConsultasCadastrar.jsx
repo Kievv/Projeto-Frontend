@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Botao from '../../components/Botao';
-import FormsConsulta from '../../components/consultas/Formulario';
+import Formulario from '../../components/consultas/Formulario';
 
 const CadastrarRemedio = () => {
   return (
@@ -8,13 +8,13 @@ const CadastrarRemedio = () => {
       <div className="layout-remedios">
         <h1>Cadastre suas consultas no mural</h1>
         <h3>Basta preencher os campos e clicar em "Cadastrar"</h3>
-        <FormsConsulta />
+        <Formulario />
 
         <div className="btn-holder">
-          <Link href="/consultas">
+          <Link to="/consultas">
             <Botao botao="VOLTAR" classe="voltar" />
           </Link>
-          <Link href="/remedios/delete">
+          <Link to="/remedios/delete">
             <Botao botao="DELETAR" classe="delete" />
           </Link>
         </div>
