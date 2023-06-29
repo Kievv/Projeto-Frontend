@@ -1,4 +1,4 @@
-import { collection, addDoc, getDocs, query, where, limit, deleteDoc } from 'firebase/firestore';
+import { collection, doc, addDoc, getDocs, query, where, limit, deleteDoc } from 'firebase/firestore';
 import { app, db } from './firebaseConfig';
 
 export async function listExames() {
