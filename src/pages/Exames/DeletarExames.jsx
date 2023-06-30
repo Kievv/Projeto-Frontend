@@ -16,9 +16,6 @@ const DeletarExame = () => {
           <Link to="/exames">
             <Botao botao="VOLTAR" classe="voltar" />
           </Link>
-          <Link to="/exames/delete">
-            <Botao botao="DELETAR" classe="delete" />
-          </Link>
         </div>
         <div className="imagem-exames"></div>
       </div>

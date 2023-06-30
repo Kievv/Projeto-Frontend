@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Botao from '../../components/Botao';
 import Formulario from '../../components/consultas/Formulario';
 
-const CadastrarRemedio = () => {
+const CadastrarConsulta = () => {
   return (
     <>
       <div className="layout-remedios">
@@ -24,4 +24,4 @@ const CadastrarRemedio = () => {
   );
 };
 
-export default CadastrarRemedio;
+export default CadastrarConsulta;

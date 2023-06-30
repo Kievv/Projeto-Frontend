@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
+import { DialogModal, useModal } from 'react-dialog-confirm';
 import ExamesContext from '../../contexts/ExamesContext';
 import UserContext from '../../contexts/UserContext';
 import { useNavigate } from 'react-router';
@@ -21,10 +22,29 @@ const TabelaDeleteExame = () => {
 
   async function handleRemover(key) {
     await removerExame(key);
+    closeModal();
     navigate('/exames');
   }
 
   const examesFiltrados = exames.filter((exame) => exame.userId === userId);
+
+  const openModal = useModal()?.openModal;
+  const closeModal = useModal()?.closeModal;
+
+  const handleClick = (key) => {
+    openModal(
+      <DialogModal
+        icon="warning"
+        title="Remover exame"
+        description={'Tem certeza que deseja remover este exame?'}
+        cancel="Não"
+        hasCancel={true}
+        confirm="Sim"
+        hasConfirm={true}
+        onConfirm={() => handleRemover(key)}
+      />
+    );
+  };
 
   return (
     <>
@@ -36,9 +56,9 @@ const TabelaDeleteExame = () => {
             return (
               <li key={key}>
                 <p>
-                  {exame.especialidade} - {exame.clinica} - {exame.local} - {exame.dia} - {exame.horario}
+                  {exame.exame} - {exame.clinica} - {exame.local} - {exame.dia} - {exame.horario}
                 </p>
-                <button onClick={() => handleRemover(exame.key)}>DELETAR EXAME</button>
+                <button onClick={() => handleClick(exame.key)}>DELETAR EXAME</button>
               </li>
             );
           })}
